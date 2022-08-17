@@ -10,6 +10,7 @@ type Task={
     completed: boolean;
     createdAt: Date;
   }
+  
 
 form?.addEventListener('submit', (e) => {
   e.preventDefault();
