@@ -10,13 +10,16 @@ interface Istate{
   }[]
 }
 
+
+
 function App() {
-  const [people, setpeople]=useState<Istate["people"]> ([])
+  const [people, setpeople]=useState<Istate["people"]> ([{
+      name:"shaukat",
+      age:20,
+      note:"this is a notes"
 
+  }])
 
-// people.map((person)=>{
-//   console.log(person.height)
-// })
 
 
 

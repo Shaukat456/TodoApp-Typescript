@@ -11,7 +11,21 @@ interface Iprops{
 
 
 
-const List:React.FC<Iprops> = () => {
+const List:React.FC<Iprops> = ({people}) => {
+    
+  const RenderList=():JSX.Element[]  =>{
+    return people.map((person)=>{
+      return (
+        <>
+        <div className="list">
+          <h1>{person.name}</h1>
+          <h1>{person.age}</h1>
+          <h1>{person.note}</h1>
+        </div>
+      </>
+    )
+  })
+  }
 
   return (
     <div>List</div>
