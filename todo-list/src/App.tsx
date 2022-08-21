@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import List from './Components/List';
 
+
+interface Istate{
+  people:{
+    name:string,
+    age:number,
+    note?:string
+  }[]
+}
 
 function App() {
+  const [people, setpeople]=useState<Istate["people"]> ([])
+
+
+// people.map((person)=>{
+//   console.log(person.height)
+// })
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <h1>
+      <List people={people}/>
+      hello 
+     
+    </h1>
   );
 }
 
