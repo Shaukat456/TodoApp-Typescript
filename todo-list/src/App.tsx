@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import AddTodo from './Components/AddTodo';
 import List from './Components/List';
 
 
-interface Istate{
+export interface Istate{
   people:{
     name:string,
     age:number,
@@ -17,7 +18,6 @@ function App() {
       name:"shaukat",
       age:20,
       note:"this is a notes"
-
   }])
 
 
@@ -25,12 +25,13 @@ function App() {
 
 
   return (
-    <h1>
-      <List people={people}/>
-      hello 
-     
-    </h1>
-  );
+    <>
+    
+    <h1><List people={people}/></h1>
+      
+      <AddTodo />
+      </>
+      );
 }
 
 export default App;
