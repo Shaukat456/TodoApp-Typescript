@@ -27,9 +27,9 @@ function App() {
   return (
     <>
     
-    <h1><List people={people}/></h1>
+    <h1><List people={people} /></h1>
       
-      <AddTodo />
+      <AddTodo people={people} setp={setpeople}/>
       </>
       );
 }
