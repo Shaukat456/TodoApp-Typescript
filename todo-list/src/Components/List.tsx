@@ -28,7 +28,10 @@ const List:React.FC<Iprops> = ({people}) => {
   }
 
   return (
-    <div>List</div>
+    <div>
+<h1>List</h1>
+<div>{RenderList()}</div>
+    </div>
   )
 }
 
