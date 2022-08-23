@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import { Istate as MyProps } from '../App' 
 
-const AddTodo = () => {
+interface Iprops{
+  people:MyProps["people"]
+  setp:React.Dispatch<React.SetStateAction<MyProps["people"]>>
+}
+
+
+const AddTodo:React.FC<Iprops> = ({people, setp}) => {
 const [input , setinput]=useState (
 {
   name:"",
@@ -14,14 +20,29 @@ const [input , setinput]=useState (
 
 
  const handleChange=(e:React.ChangeEvent <HTMLInputElement |HTMLTextAreaElement> ): void =>{
-  const name=e.target.name
-  const value=e.target.value
+  // const name=e.target.name
+  // const value=e.target.value
 
   setinput({
       ...input,
-    [name]:value
+    [e.target.name]:e.target.value
   })
 
+ }
+
+ const handleClick=()=>{
+    // if (!input.name || input.age || input.note ){
+    //   return
+    // }
+
+    setp([
+      ...people,
+      {
+        name:input.name,
+        age:parseInt(input.age),
+        note:input.note
+      }
+    ])
  }
 
 
@@ -29,24 +50,26 @@ const [input , setinput]=useState (
     <div className='' style={{display:"flex" ,flexDirection:"column", justifyContent:"center"}}>
       <h1> Add list</h1>
 
-        <input type="text" name='Name'
+        <input type="text"
+         name='name'
         placeholder='name'
         value={input.name}
         onChange={handleChange}
         />
-        <input type="text" name='age'
+        <input type="number" name='age'
         placeholder='age'
         
         value={input.age}
         onChange={handleChange}
         />
-        <textarea name="" 
+        <textarea 
+        name="note" 
         placeholder='notes'
       value={input.note}
       onChange={handleChange}
         
         />
-        <button > ADD to List </button>
+        <button onClick={handleClick}> ADD to List </button>
         
     </div>
   )
