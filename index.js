@@ -30,6 +30,7 @@
 //     age:1
 // }
 // console.log(user1)
+
 // // user1.id=2
 // interface Mathf{
 //     (x:number, y:number) :number
