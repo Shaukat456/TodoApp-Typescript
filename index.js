@@ -14,6 +14,7 @@
 // ]
 // enum sdad{
 //     id='asdsad',
+
 //     som='ddd',
 // }
 // console.log(sdad)
