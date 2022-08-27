@@ -19,6 +19,7 @@
 // console.log(sdad)
 // interface UI{
 //    readonly id:number,
+
 //     name:string,
 //     age:number
 // }
